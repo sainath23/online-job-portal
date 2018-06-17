@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -18,6 +20,8 @@ public class UserLocation implements Serializable {
 
 	@JsonIgnore
 	@OneToOne
+	@Id
+	@MapsId
 	@JoinColumn(name = "user_account_id", referencedColumnName = "id")
 	private UserAccount userAccount;
 	

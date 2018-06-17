@@ -83,7 +83,7 @@ public class UserAccount implements Serializable {
 	private Set<ExperienceDetail> experienceDetails;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "skillSetPrimaryKey.userAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "seekerSkillSetPrimaryKey.userAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<SeekerSkillSet> seekerSkillSets;
 	
 	@JsonIgnore

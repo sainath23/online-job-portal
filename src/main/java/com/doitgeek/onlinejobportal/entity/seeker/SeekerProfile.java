@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
@@ -18,6 +19,18 @@ public class SeekerProfile implements Serializable {
 
 	private static final long serialVersionUID = 7138753120710465491L;
 	
+	@Id
+	@Column(name = "user_account_id", nullable = false, updatable = false)
+	private Integer userAccountId;
+	
+	public Integer getUserAccountId() {
+		return userAccountId;
+	}
+
+	public void setUserAccountId(Integer userAccountId) {
+		this.userAccountId = userAccountId;
+	}
+
 	@Column(name = "first_name")
 	private String firstName;
 	

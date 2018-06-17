@@ -30,7 +30,7 @@ public class SkillSet implements Serializable {
 	private String skillSetName;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "skillSetPrimaryKey.skillSet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "seekerSkillSetPrimaryKey.skillSet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<SeekerSkillSet> seekerSkillSets;
 	
 	@JsonIgnore

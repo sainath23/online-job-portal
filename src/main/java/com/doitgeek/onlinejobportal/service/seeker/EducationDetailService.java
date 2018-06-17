@@ -11,6 +11,7 @@ import com.doitgeek.onlinejobportal.entity.seeker.EducationDetail;
 import com.doitgeek.onlinejobportal.entity.seeker.EducationDetailPrimaryKey;
 import com.doitgeek.onlinejobportal.entity.user.UserAccount;
 import com.doitgeek.onlinejobportal.repository.seeker.EducationalDetailRepository;
+import com.doitgeek.onlinejobportal.repository.user.UserAccountRepository;
 
 @Service
 public class EducationDetailService {
@@ -18,18 +19,26 @@ public class EducationDetailService {
 	@Autowired
 	private EducationalDetailRepository educationalDetailRepository;
 	
+	@Autowired
+	private UserAccountRepository userAccountRepository;
+	
 	private static final Logger LOGGER = LogManager.getLogger(EducationalDetailRepository.class);
 	
 	public List<EducationDetail> findAllEducationDetail() {
 		return educationalDetailRepository.findAll();
 	}
 	
-	/*public List<EducationDetail> findAllEducationDetailByUserAccount(UserAccount userAccount) {
-		return educationalDetailRepository.findByUserAccount(userAccount);
-	}*/
+	public List<EducationDetail> findAllEducationDetailByUserAccount(Integer userAccountId) {
+		return educationalDetailRepository.findByEducationDetailPrimaryKeyUserAccountId(userAccountId);
+	}
 	
-	public EducationDetail findEducationDetailById(EducationDetailPrimaryKey id) {
+	public EducationDetail findEducationDetailById(Integer userAccountId, String certificateDegreeName, String major) {
 		try {
+			UserAccount userAccount = userAccountRepository.findById(userAccountId).get();
+			EducationDetailPrimaryKey id = new EducationDetailPrimaryKey();
+			id.setUserAccount(userAccount);
+			id.setCertificateDegreeName(certificateDegreeName);
+			id.setMajor(major);
 			return educationalDetailRepository.findById(id).get();
 		}
 		catch(Exception e) {
@@ -46,7 +55,7 @@ public class EducationDetailService {
 		educationalDetailRepository.save(educationDetail);
 	}
 	
-	public void deleteEducationDetailById(EducationDetailPrimaryKey id) {
-		educationalDetailRepository.deleteById(id);
+	public void deleteEducationDetail(EducationDetail educationDetail) {
+		educationalDetailRepository.delete(educationDetail);
 	}
 }

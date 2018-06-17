@@ -1,6 +1,5 @@
 package com.doitgeek.onlinejobportal.service.seeker;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -20,9 +19,7 @@ public class SeekerProfileService {
 	private static final Logger logger = LogManager.getLogger(SeekerProfileService.class);
 
 	public List<SeekerProfile> findAllSeekerProfile() {
-		List<SeekerProfile> seekerProfiles = new ArrayList<>();
-		seekerProfileRepository.findAll().forEach(seekerProfiles::add);
-		return seekerProfiles;
+		return seekerProfileRepository.findAll();
 	}
 	
 	public SeekerProfile findSeekerProfileByUserAccountId(Integer userAccountId) {

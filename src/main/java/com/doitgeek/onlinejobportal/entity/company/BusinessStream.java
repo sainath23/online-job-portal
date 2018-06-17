@@ -29,7 +29,7 @@ public class BusinessStream implements Serializable {
 	private String businessStreamName;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "businessStram", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "businessStream", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Company> company;
 	
 	public Integer getId() {

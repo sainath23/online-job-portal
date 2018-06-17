@@ -20,11 +20,11 @@ import com.doitgeek.onlinejobportal.service.user.UserAccountService;
 @RequestMapping("/rest/seeker")
 public class SeekerController {
 
-	@Autowired
+	/*@Autowired
 	private UserAccountService userAccountService;
 	
 	@Autowired
-	private EducationDetailService educationDetailService;
+	private EducationDetailService educationDetailService;*/
 	
 	/*@GetMapping("/{userAccountId}")
 	public ResponseEntity<List<EducationDetail>> getAllEducationDetailByUserAccountId(@PathVariable Integer userAccountId) {
@@ -36,10 +36,10 @@ public class SeekerController {
 		return new ResponseEntity<List<EducationDetail>>(educationDetails, HttpStatus.OK);
 	}*/
 	
-	@PostMapping("/{userAccountId}")
+	/*@PostMapping("/{userAccountId}")
 	public ResponseEntity<EducationDetail> getEducationDetailById(@PathVariable Integer userAccountId, String degreeName) {
 		UserAccount userAccount = userAccountService.findUserAccountById(userAccountId);
 		
 		return null;
-	}
+	}*/
 }

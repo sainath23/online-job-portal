@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class SeekerSkillSet {
 	
 	@EmbeddedId
-	private SkillSetPrimaryKey skillSetPrimaryKey;
+	private SeekerSkillSetPrimaryKey seekerSkillSetPrimaryKey;
 	
 	@Column(name = "skill_level")
 	private Integer skillLevel;
@@ -23,12 +23,13 @@ public class SeekerSkillSet {
 		this.skillLevel = skillLevel;
 	}
 
-	public SkillSetPrimaryKey getSkillSetPrimaryKey() {
-		return skillSetPrimaryKey;
+	public SeekerSkillSetPrimaryKey getSeekerSkillSetPrimaryKey() {
+		return seekerSkillSetPrimaryKey;
 	}
 
-	public void setSkillSetPrimaryKey(SkillSetPrimaryKey skillSetPrimaryKey) {
-		this.skillSetPrimaryKey = skillSetPrimaryKey;
+	public void setSeekerSkillSetPrimaryKey(SeekerSkillSetPrimaryKey seekerSkillSetPrimaryKey) {
+		this.seekerSkillSetPrimaryKey = seekerSkillSetPrimaryKey;
 	}
+	
 	
 }

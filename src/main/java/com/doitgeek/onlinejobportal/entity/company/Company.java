@@ -47,7 +47,7 @@ public class Company implements Serializable {
 	private String companyWebsiteURL;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "companyImagePrimaryKey.company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<CompanyImage> companyImages;
 	
 	@JsonIgnore

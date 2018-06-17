@@ -10,7 +10,7 @@ import com.doitgeek.onlinejobportal.entity.user.UserAccount;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Embeddable
-public class SkillSetPrimaryKey implements Serializable {
+public class SeekerSkillSetPrimaryKey implements Serializable {
 
 	private static final long serialVersionUID = 5271961597617039619L;
 
@@ -19,7 +19,7 @@ public class SkillSetPrimaryKey implements Serializable {
 	@JoinColumn(name = "user_account_id", referencedColumnName = "id")
 	private UserAccount userAccount;
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "skill_set_id", referencedColumnName = "id")
 	private SkillSet skillSet;
