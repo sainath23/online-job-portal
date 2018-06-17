@@ -22,14 +22,6 @@ public class SeekerProfile implements Serializable {
 	@Id
 	@Column(name = "user_account_id", nullable = false, updatable = false)
 	private Integer userAccountId;
-	
-	public Integer getUserAccountId() {
-		return userAccountId;
-	}
-
-	public void setUserAccountId(Integer userAccountId) {
-		this.userAccountId = userAccountId;
-	}
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -51,6 +43,14 @@ public class SeekerProfile implements Serializable {
 	@MapsId
 	@JoinColumn(name = "user_account_id", referencedColumnName = "id")
 	private UserAccount userAccount;
+	
+	public Integer getUserAccountId() {
+		return userAccountId;
+	}
+
+	public void setUserAccountId(Integer userAccountId) {
+		this.userAccountId = userAccountId;
+	}
 	
 	public String getFirstName() {
 		return firstName;
