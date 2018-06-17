@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
@@ -18,6 +19,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class RecruiterProfile implements Serializable {
 
 	private static final long serialVersionUID = 777889844944371386L;
+	
+	@Id
+	@Column(name = "user_account_id", nullable = false, updatable = false)
+	private Integer userAccountId;
 
 	@JsonIgnore
 	@OneToOne
@@ -67,4 +72,14 @@ public class RecruiterProfile implements Serializable {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+
+	public Integer getUserAccountId() {
+		return userAccountId;
+	}
+
+	public void setUserAccountId(Integer userAccountId) {
+		this.userAccountId = userAccountId;
+	}
+	
+	
 }
