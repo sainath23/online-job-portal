@@ -26,8 +26,8 @@ public class SeekerSkillSetService {
 	private SkillSetRepository skillSetRepository;
 	
 	public SeekerSkillSet findAllSeekerSkillSetsById(Integer userAccountId, Integer skillSetId) {
-		UserAccount userAccount = userAccountRepository.findById(userAccountId).get();
 		try {
+			UserAccount userAccount = userAccountRepository.findById(userAccountId).get();
 			SkillSet skillSet = skillSetRepository.findById(skillSetId).get();
 			SeekerSkillSetPrimaryKey id = new SeekerSkillSetPrimaryKey();
 			id.setUserAccount(userAccount);
